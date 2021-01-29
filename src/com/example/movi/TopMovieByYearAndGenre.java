@@ -45,8 +45,10 @@ public class TopMovieByYearAndGenre {
             }
         }
 
-        System.out.println("Top Movie By Year " + yr + " and genre " + gen + ": "+top_average_rating_movie_id_by_year);
+        System.out.println("Top Movie Id By Year " + yr + " and genre " + gen + ": "+top_average_rating_movie_id_by_year);
       //  System.out.println(maxx);
+
+        System.out.println("Top Movie Name By Year " + yr + " and genre " + gen + ": "+mo.get(top_average_rating_movie_id_by_year).movieTitle);
 
     }
 }

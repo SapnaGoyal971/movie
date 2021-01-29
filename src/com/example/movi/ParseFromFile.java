@@ -7,7 +7,26 @@ import java.util.regex.Pattern;
 
 public class ParseFromFile {
 
-    public static void parsing_user(){
+    public static void parsing_user(List<User> u) throws IOException {
+
+        File file = new File("C:\\Users\\sapna.goyal\\Downloads\\user.data");
+
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String st;
+        while ((st = br.readLine()) != null) {
+            String string = st;
+            String[] parts = string.split(Pattern.quote("|"));
+            User dummy = new User();
+            dummy.userid= Integer.parseInt(parts[0]);
+            dummy.age= Integer.parseInt(parts[1]);
+            dummy.gender=parts[2];
+            dummy.occupation=parts[3];
+            dummy.zipcode=parts[4];
+           /* System.out.println(parts[0]);
+            System.out.println(string);*/
+
+            u.add(dummy);
+        }
 
     }
     public static void parsing_rating(List<Rating> r) throws IOException{
@@ -21,7 +40,7 @@ public class ParseFromFile {
             dummy.UserId= Integer.parseInt(parts.nextToken());
             dummy.ItemId= Integer.parseInt(parts.nextToken());
             dummy.rating= Integer.parseInt(parts.nextToken());
-            /*System.out.println(parts.nextToken());
+          /*  System.out.println(parts.nextToken());
             System.out.println(string);*/
 
             r.add(dummy);
@@ -49,7 +68,24 @@ public class ParseFromFile {
         }
 
     }
-    public static void parsing_genre(){
+    public static void parsing_genre(List<Genre> g) throws IOException {
+
+        File file = new File("C:\\Users\\sapna.goyal\\Downloads\\genre.data");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String st;
+        while ((st = br.readLine()) != null) {
+            String string = st;
+            String[] parts = string.split(Pattern.quote("|"));
+            Genre dummy = new Genre();
+            if(parts.length==2) {
+                dummy.genrename = parts[0];
+                dummy.genreid = Integer.parseInt(parts[1]);
+               /* System.out.println(parts[1]);
+                System.out.println(string);*/
+            }
+            g.add(dummy);
+        }
+
 
     }
 

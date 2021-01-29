@@ -30,6 +30,11 @@ public class MostActiveUser {
 
         System.out.println("Most Active User Id: "+mostactiveuserid);
 
+        List<User> u =new ArrayList<User>() ;
+        ParseFromFile.parsing_user(u);
+
+
+        System.out.println("Most Active User occupation: "+u.get(mostactiveuserid).occupation);
 
 
     }

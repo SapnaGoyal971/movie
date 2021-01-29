@@ -30,6 +30,11 @@ public class MostWatchedMovie {
 
         System.out.println("Most Watched Movie Id: "+ mostwatchedmovieid);
 
+        List<Movie> mo =new ArrayList<Movie>() ;
+        ParseFromFile.parsing_movie(mo);
+
+        System.out.println("Most Watched Movie Name: "+mo.get(mostwatchedmovieid).movieTitle);
+
 
     }
 }

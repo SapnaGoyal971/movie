@@ -42,5 +42,10 @@ public class HighestRatedGenre {
 
         System.out.println("Highest Rated Genre Id: "+ highestratedgenreid);
 
+        List<Genre> go =new ArrayList<Genre>() ;
+        ParseFromFile.parsing_genre(go);
+
+
+        System.out.println("Highest Rated Genre Name: "+go.get(highestratedgenreid).genrename);
     }
 }

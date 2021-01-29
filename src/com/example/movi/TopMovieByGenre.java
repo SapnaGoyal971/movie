@@ -43,8 +43,11 @@ public class TopMovieByGenre {
             }
         }
 
+
         System.out.println("Top Movie id By Genre " +gen+ ": " +top_average_rating_movie_id_by_genre);
       //  System.out.println(maxx);
+
+        System.out.println("Top Movie Name By Genre " +gen+ ": " +mo.get(top_average_rating_movie_id_by_genre).movieTitle);
 
     }
 }

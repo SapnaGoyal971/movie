@@ -74,8 +74,11 @@ public class TopListOfMoviesByGenre {
         for (Map.Entry<Integer, Float> en : hm1.entrySet()) {
             if(coun==5)
                 break;
-            System.out.println((coun+1)+": Movie Id "+" = " + en.getKey() +
-                    ", Rating = " + en.getValue());  //Print the movie id and their average rating
+            System.out.print((coun+1)+": Movie Id "+" = " + en.getKey() +
+                    ", Rating = " + en.getValue()+" ");  //Print the movie id and their average rating
+
+            System.out.println("Movie Name: "+mo.get(en.getKey()).movieTitle);
+
             coun++;
         }
 //////////////////////////////////////////////////

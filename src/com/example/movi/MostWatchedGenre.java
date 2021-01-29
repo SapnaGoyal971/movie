@@ -42,6 +42,11 @@ public class MostWatchedGenre {
         System.out.println("Most Watched Genre Id: "+ mostwatchedgenreid);
 
 
+        List<Genre> go =new ArrayList<Genre>() ;
+        ParseFromFile.parsing_genre(go);
+
+        System.out.println("Most Watched Genre Name: "+go.get(mostwatchedgenreid).genrename);
+
 
     }
 }
