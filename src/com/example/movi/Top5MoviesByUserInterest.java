@@ -5,9 +5,6 @@ import java.util.*;
 
 
 public class Top5MoviesByUserInterest {
-    public static<K> void increment(Map<K,Integer> map, K key,int rate) {
-        map.merge(key, 1, Integer::sum);
-    }
 
     public static void findtop5(int us_id) throws IOException {
 ////////////////////////////////////////////////////////////////////////
@@ -21,7 +18,6 @@ public class Top5MoviesByUserInterest {
         for(int i=0;i< ra.size();i++){
             if(us_id==ra.get(i).UserId){
                 movies.add(ra.get(i).ItemId);
-              //  increment(map, ra.get(i).ItemId,ra.get(i).rating);
                 map.put(ra.get(i).ItemId,ra.get(i).rating);
             }
         }
@@ -55,23 +51,13 @@ public class Top5MoviesByUserInterest {
 
         Collections.sort(genre, Collections.reverseOrder());
 
-        for(int i=0;i<19;i++)
-            System.out.println(genre.get(i));
+        /*for(int i=0;i<19;i++)
+            System.out.println(genre.get(i));*/
 //We have got the list of genres that a user likes from most favourite to least favourite
 /////////////////////////////////////////////////////////////////////////////////////
 
-
         //Now we will have to find top 5 movies based on user's favorite genres
-
-
-
-         TopMovieByGenre.top_by_genre(m2.get(genre.get(0)));
-
-
          TopListOfMoviesByGenre.top_list_by_genre(m2.get(genre.get(0)),us_id);
-
-
-
 
     }
 }

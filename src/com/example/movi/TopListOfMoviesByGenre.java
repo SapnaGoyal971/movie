@@ -70,9 +70,13 @@ public class TopListOfMoviesByGenre {
         }
         Map<Integer, Float> hm1 = sortByValue(hm);
 
+            int coun=0;
         for (Map.Entry<Integer, Float> en : hm1.entrySet()) {
+            if(coun==5)
+                break;
             System.out.println("Key = " + en.getKey() +
                     ", Value = " + en.getValue());
+            coun++;
         }
 //////////////////////////////////////////////////
 
