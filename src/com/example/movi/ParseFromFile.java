@@ -9,7 +9,8 @@ public class ParseFromFile {
 
     public static void parsing_user(List<User> u) throws IOException {
 
-        File file = new File("C:\\Users\\sapna.goyal\\Downloads\\user.data");
+      //  File file = new File("C:\\Users\\sapna.goyal\\Downloads\\user.data");
+        File file = new File("src/DataFiles/user.data");
 
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
@@ -30,7 +31,8 @@ public class ParseFromFile {
 
     }
     public static void parsing_rating(List<Rating> r) throws IOException{
-        File file = new File("C:\\Users\\sapna.goyal\\Downloads\\ratings.data");
+    //    File file = new File("C:\\Users\\sapna.goyal\\Downloads\\ratings.data");
+        File file = new File("src/DataFiles/ratings.data");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         while ((st = br.readLine()) != null) {
@@ -48,7 +50,9 @@ public class ParseFromFile {
 
     }
     public static void parsing_movie(List<Movie> m) throws IOException {
-        File file = new File("C:\\Users\\sapna.goyal\\Downloads\\movie.data");
+       // File file = new File("C:\\Users\\sapna.goyal\\Downloads\\movie.data");
+        File file = new File("src/DataFiles/movie.data");
+
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         while ((st = br.readLine()) != null) {
@@ -66,11 +70,11 @@ public class ParseFromFile {
             }
             m.add(dummy);
         }
-
     }
     public static void parsing_genre(List<Genre> g) throws IOException {
 
-        File file = new File("C:\\Users\\sapna.goyal\\Downloads\\genre.data");
+       // File file = new File("C:\\Users\\sapna.goyal\\Downloads\\genre.data");
+        File file = new File("src/DataFiles/genre.data");
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         while ((st = br.readLine()) != null) {
