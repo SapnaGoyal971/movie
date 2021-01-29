@@ -43,7 +43,7 @@ public class TopListOfMoviesByGenre {
         List<Integer> movie_ids=new ArrayList<>();   //To get the list of movie id's with the given genre gen
         for(int i=0;i<mo.size();i++){
             if(mo.get(i).genre.get(gen)==1)
-                movie_ids.add(mo.get(i).movieId);
+                movie_ids.add(mo.get(i).movieId); //Add that movie id to movie_ids whose genre is same as our genre gen
         }
 
        /* for(int i=0;i<movie_ids.size();i++){
@@ -53,29 +53,29 @@ public class TopListOfMoviesByGenre {
 
         List<Rating> ra =new ArrayList<Rating>() ;
         ParseFromFile.parsing_rating(ra);
-        HashMap<Integer, Float> hm = new HashMap<Integer, Float>();
+        HashMap<Integer, Float> hm = new HashMap<Integer, Float>(); //To get total average rating of the movie based on users given rating
 
             for(int j=0;j<movie_ids.size();j++) {
             int sum=0;
             int count=0;
             for (int i = 0; i < ra.size(); i++) {
                 if (ra.get(i).ItemId ==movie_ids.get(j)){
-                    sum+=ra.get(i).rating;
-                    count++;
+                    sum+=ra.get(i).rating; //add rating to our movie j if user's movie i is same as our movie j.
+                    count++; //increase the count of movie if our movie j is same as user's movie i.
                 }
             }
-            float avg= sum/(float)count;
+            float avg= sum/(float)count; //this is average total rating of our movie j
             if(userhasnotseen(us_id,movie_ids.get(j),ra)==1)
             hm.put(movie_ids.get(j),avg);
         }
-        Map<Integer, Float> hm1 = sortByValue(hm);
+        Map<Integer, Float> hm1 = sortByValue(hm); //sort movies based on their average rating in descending order.
 
-            int coun=0;
+            int coun=0; //In order to keep count of first 5 movies
         for (Map.Entry<Integer, Float> en : hm1.entrySet()) {
             if(coun==5)
                 break;
             System.out.println("Key = " + en.getKey() +
-                    ", Value = " + en.getValue());
+                    ", Value = " + en.getValue());  //Print the movie id and their average rating
             coun++;
         }
 //////////////////////////////////////////////////

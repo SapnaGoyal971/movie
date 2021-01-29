@@ -17,8 +17,8 @@ public class Top5MoviesByUserInterest {
 
         for(int i=0;i< ra.size();i++){
             if(us_id==ra.get(i).UserId){
-                movies.add(ra.get(i).ItemId);
-                map.put(ra.get(i).ItemId,ra.get(i).rating);
+                movies.add(ra.get(i).ItemId);   //If user's id and current userid mathes then add tat movie rated by our user to movies list.
+                map.put(ra.get(i).ItemId,ra.get(i).rating); //Add the rating that user has given to that item(movie) to map.
             }
         }
 
@@ -57,7 +57,7 @@ public class Top5MoviesByUserInterest {
 /////////////////////////////////////////////////////////////////////////////////////
 
         //Now we will have to find top 5 movies based on user's favorite genres
-         TopListOfMoviesByGenre.top_list_by_genre(m2.get(genre.get(0)),us_id);
+         TopListOfMoviesByGenre.top_list_by_genre(m2.get(genre.get(0)),us_id); //To get top 5 movies based on user's most favourite genre.
 
     }
 }
