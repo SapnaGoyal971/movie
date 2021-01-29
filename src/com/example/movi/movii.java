@@ -53,6 +53,18 @@ public class movii {
             MostWatchedMovie.mostwatchedmovie();
         }
 
+        if(choice==5){
+            MostWatchedGenre.mostwatchedgenre();
+        }
+
+        if(choice==6){
+            HighestRatedGenre.higestratedgenre();
+        }
+
+        if(choice==7){
+            MostActiveUser.mostactiveuser();
+        }
+
         if(choice == 8) {
             System.out.print("Enter User Id- ");
             int us_id = sc2.nextInt();

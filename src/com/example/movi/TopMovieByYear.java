@@ -46,8 +46,8 @@ public class TopMovieByYear {
             }
         }
 
-        System.out.println(top_average_rating_movie_id_by_year);
-        System.out.println(maxx);
+        System.out.println("Top Movie Id By Year " + yr + ": "+top_average_rating_movie_id_by_year);
+      //  System.out.println(maxx);
 
 
     }
