@@ -19,6 +19,8 @@ public class TopMovieByYearAndGenre {
                 movie_ids.add(mo.get(i).movieId);
         }
 
+        if(movie_ids.isEmpty())
+            System.out.println("No movie released in this year");
        /* for(int i=0;i<movie_ids.size();i++){
             System.out.println(movie_ids.get(i));
         }*/
@@ -45,9 +47,10 @@ public class TopMovieByYearAndGenre {
             }
         }
 
+        if(!movie_ids.isEmpty())
         System.out.println("Top Movie Id By Year " + yr + " and genre " + gen + ": "+top_average_rating_movie_id_by_year);
       //  System.out.println(maxx);
-
+        if(!movie_ids.isEmpty())
         System.out.println("Top Movie Name By Year " + yr + " and genre " + gen + ": "+mo.get(top_average_rating_movie_id_by_year).movieTitle);
 
     }
